@@ -1,0 +1,54 @@
+---
+/**
+ * * These are alternating side cards with titles, text, and images
+ * Recommend using 2 or 3 cards in a row
+ */
+
+// components
+import FeatureCard from "@components/FeatureCard/FeatureCardSideImage2.astro";
+
+// images
+import image2 from "@images/multiple-languages.png";
+
+// videos
+import video2 from "@videos/code-examples.mp4";
+
+interface FeatureItem {
+    image: ImageMetadata; // an imported image
+    label: string; // colored text first
+    title: string; // larger title second
+    video: string; // video location
+    details: string; // text details third
+}
+
+// data
+const featureData: FeatureItem[] = [
+    {
+        image: image2,
+        video: video2,
+        label: "Compiled and dynamic language support",
+        title: "Run multiple languages",
+        details: `No complicated setup, configuration, or anything to install. Just write your code in your favorite language and run it.`,
+    },
+];
+---
+
+<section id="feature9" class="my-24 md:my-36">
+    <div class="container">
+        <div class="flex flex-col gap-16 md:gap-24">
+            {
+                featureData.map((feature, idx) => (
+                    <FeatureCard
+                        video={feature.video}
+                        label={feature.label}
+                        title={feature.title}
+                        details={feature.details}
+                        image={feature.image}
+                        video={feature.video}
+                        imageSide={"right"}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

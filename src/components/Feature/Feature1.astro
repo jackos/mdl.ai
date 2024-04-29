@@ -1,0 +1,82 @@
+---
+/**
+ * * These are small cards with icons, titles, and text
+ * This looks best with an even number of cards. They are smaller to
+ * use with more cards in the same section. 4 or 6 cards is probably ideal
+ *
+ * ! If you can an error for an icon like "Error: Not Found: "calendar-check" in pack "tabler",
+ * ! You can copy to actual SVG into src/icons and name it however and use similar to below
+ */
+
+// components
+import FeatureCard from "@components/FeatureCard/FeatureCardSmall.astro";
+
+interface FeatureData {
+  icon: string;
+  title: string;
+  text: string;
+}
+
+// data
+const featureData: FeatureData[] = [
+  {
+    icon: "tabler:wall-off",
+    title: "No cell run order",
+    text: `You don't have to rerun cells in order like Jupyter. Any changes in prior cells are reflected in later cells.`,
+  },
+  {
+    icon: "tabler:3d-cube-sphere-off",
+    title: "No dependencies",
+    text: `Everything is pure nodejs, using what comes with VS Code. No NPM dependencies adding to security vulnerabilities.`,
+  },
+  {
+    icon: "tabler:flame",
+    title: "400ms response from llama3-8b",
+    text: `Using Groq for the fastest LLM response time in the game!`,
+  },
+  {
+    icon: "tabler:wand",
+    title: "Powerful codegen with GPT4",
+    text: `Use the most powerful AI for generating code and descriptions.`,
+  },
+  {
+    icon: "tabler:brand-codesandbox",
+    title: "Mix languages in the same notebook",
+    text: `There is no complicated Jupyter kernel, a single document can have multiple languages comparing functionality.`,
+  },
+  {
+    icon: "tabler:api-app",
+    title: "LSP Features",
+    text: `Python, JS, and TS all have LSP features like autocomplete and hover info. Compiled language support coming soon.`,
+  },
+  {
+    icon: "tabler:notebook",
+    title: "Searchable notes wiki",
+    text: `Build up your notes with runnable code cells, to quickly recall functionality and ideas.`,
+  },
+  {
+    icon: "tabler:vocabulary",
+    title: "Open generated source code",
+    text: `Figure out how things work by looking at the generated source code.`,
+  },
+];
+---
+
+<section id="feature1" class="my-12 md:my-24">
+  <div class="container">
+    <div class="grid gap-6 sm:grid-cols-2 md:py-8 lg:grid-cols-3">
+      {
+        featureData.map((feature, idx) => (
+          <FeatureCard
+            title={feature.title}
+            text={feature.text}
+            icon={feature.icon}
+            data-aos="fade-up"
+            data-aos-delay={0.15 * idx}
+            data-aos-trigger="#feature1"
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

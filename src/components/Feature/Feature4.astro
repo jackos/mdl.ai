@@ -1,0 +1,54 @@
+---
+/**
+ * * These are alternating side cards with titles, text, and images
+ * Recommend using 2 or 3 cards in a row
+ */
+
+// components
+import FeatureCard from "@components/FeatureCard/FeatureCardSideImage.astro";
+
+// images
+import image1 from "@images/github.png";
+
+// videos
+import video1 from "@videos/render-anywhere.mp4";
+
+interface FeatureItem {
+    image: ImageMetadata; // an imported image
+    label: string; // colored text first
+    title: string; // larger title second
+    video: string; // video location
+    details: string; // text details third
+}
+
+// data
+const featureData: FeatureItem[] = [
+    {
+        image: image1,
+        video: video1,
+        label: "Source code is just markdown",
+        title: "Improved Developer Experience",
+        details: `Use output with static site generators and render on GitHub with no extra build steps. Diffs, git blame, PRs all render nicely because the source code is just markdown!`,
+    },
+];
+---
+
+<section id="feature4" class="my-24 md:my-36">
+    <div class="container">
+        <div class="flex flex-col gap-16 md:gap-24">
+            {
+                featureData.map((feature, idx) => (
+                    <FeatureCard
+                        video={feature.video}
+                        label={feature.label}
+                        title={feature.title}
+                        details={feature.details}
+                        image={feature.image}
+                        video={feature.video}
+                        imageSide={"left"}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

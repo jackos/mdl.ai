@@ -1,0 +1,46 @@
+---
+/**
+ * * CTA section with glow inside card and left text and right button on large screens
+ */
+
+// components
+import Button from "@components/Button/Button.astro";
+---
+
+<section id="CTA" class="my-24 py-8 md:my-36">
+  <div class="container">
+    <div
+      class="pricing-plan relative mx-auto h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-primary-400 to-base-300 to-40% dark:from-primary-500 dark:to-base-600/60"
+    >
+      <div class="relative h-full p-px">
+        <div
+          class="relative z-10 h-full overflow-hidden rounded-[calc(1rem-1px)] bg-primary-100 dark:bg-base-800"
+        >
+          <!-- inside card glow  -->
+          <div
+            class="absolute left-0 top-0 -z-10 mx-auto aspect-square w-full max-w-xl -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-600/10 blur-3xl md:-translate-x-1/4"
+            aria-hidden="true"
+          >
+          </div>
+
+          <div
+            class="mx-auto grid max-w-3xl gap-8 px-4 py-20 md:grid-cols-3 md:py-24"
+          >
+            <div class="md:col-span-2">
+              <div class="flex justify-start">
+                <p class="colored-title inline">Accelerate your workflow</p>
+              </div>
+              <h2 class="h1 mt-8">What are you waiting for?</h2>
+              <p class="description mt-6">
+                Try the free version now. No credit card or signup required.
+              </p>
+            </div>
+            <div class="flex items-end justify-start md:justify-end">
+              <Button variant="primary" href="https://marketplace.visualstudio.com/items?itemName=jackos.mdl-ai">Install Extension</Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
