@@ -16,23 +16,23 @@ export interface SiteDataProps {
 }
 
 const siteData: SiteDataProps = {
-  name: "MDL.AI",
+  name: "Markdown Lab",
   title:
-    "Markdown Deep Learning AI - Generate code blocks with AI and run them in markdown files",
+    "Markdown Lab",
   description:
-    "A VS Code extension for running codeblocks interactively in markdown files using AI.",
+    "Run markdown code blocks interactively in a notebook with any programming language, and generate code blocks with LLMs.",
   useViewTransitions: true,
   useAnimations: true,
   author: {
     name: "Jack Clayton",
     email: "jackos@me.com",
-    twitter: "mdl_ai",
+    twitter: "jack_clayto",
   },
 
   // default image for meta tags if the page doesn't have an image already
   defaultImage: {
     src: "/images/site-logo.jpg",
-    alt: "MDL.AI logo",
+    alt: "Markdown Lab logo",
   },
 };
 

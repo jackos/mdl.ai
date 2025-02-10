@@ -1,3 +1,3 @@
-# MDL.AI
+# Markdown Lab
 
-Static site for MDL.AI extension
+Static site for Markdown Lab VS Code extension
